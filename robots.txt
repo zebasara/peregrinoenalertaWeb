@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://peregrinoenalerta-web.vercel.app/sitemap.xml
+Sitemap: https://peregrinoenalerta.vercel.app/sitemap.xml
