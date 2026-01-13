@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peregrinoenalerta-web.vercel.app/sitemap.xml
