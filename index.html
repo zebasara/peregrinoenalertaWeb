@@ -8,6 +8,7 @@
     <meta name="keywords" content="instalación de cámaras de seguridad, cámaras de seguridad, videovigilancia, monitoreo 24/7, seguridad, protección, alarmas, cámaras IP, cámaras wifi, seguridad para hogares, seguridad para comercios, sistema de vigilancia, CCTV, monitoreo remoto, central de monitoreo, seguridad electrónica" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://peregrinoenalerta.vercel.app/" />
+    <link rel="icon" type="image/png" href="icono_empresa.png" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -261,6 +262,73 @@
 
         .nav-links a:hover::after {
             transform: scaleX(1);
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--plasma-pink));
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px var(--electric-blue);
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(10, 1, 24, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            padding: 100px 2rem 2rem;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s 0.4s;
+        }
+
+        .mobile-menu.active {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
+            transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s 0s;
+        }
+
+        .mobile-menu .nav-links {
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            display: flex;
+        }
+
+        .mobile-menu .nav-links a {
+            font-size: 1.5rem;
+            padding: 1rem;
         }
 
         /* Hero Section */
@@ -951,6 +1019,10 @@
                 display: none;
             }
 
+            .menu-toggle {
+                display: flex;
+            }
+
             .hero {
                 padding: 6rem 1rem 2rem;
             }
@@ -1000,6 +1072,62 @@
             .contact-details {
                 text-align: center;
             }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-orb {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .service-card,
+            .tech-card,
+            .feature-item {
+                padding: 2rem 1.5rem;
+            }
+
+            .services,
+            .technology,
+            .features,
+            .contact {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .holo-display {
+                height: 350px;
+            }
+
+            .globe-ring:nth-child(1) {
+                width: 200px !important;
+                height: 200px !important;
+            }
+
+            .globe-ring:nth-child(2) {
+                width: 150px !important;
+                height: 150px !important;
+            }
+
+            .globe-ring:nth-child(3) {
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            .globe-core {
+                width: 80px !important;
+                height: 80px !important;
+            }
         }
 
         /* Scroll Animations */
@@ -1042,8 +1170,23 @@
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#tecnologia">Tecnología</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
 
         <main>
             <section class="hero">
@@ -1052,7 +1195,7 @@
                     <h1>Seguridad<br>del Futuro</h1>
                     <p>Tecnología de monitoreo inteligente que protege tu mundo las 24 horas. Videovigilancia de última generación y respuesta inmediata en Tandil.</p>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" class="btn btn-primary" target="_blank"><span>INICIAR MISIÓN</span></a>
+                        <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" class="btn btn-primary" target="_blank"><span>INICIAR</span></a>
                         <a href="#servicios" class="btn btn-secondary"><span>EXPLORAR SISTEMAS</span></a>
                     </div>
                 </div>
@@ -1185,7 +1328,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <strong>Canal Email</strong>
-                                    <a href="mailto:peregrinoenalerta@gmail.com">peregrinoenalerta@gmail.com</a>
+                                    <a href="/cdn-cgi/l/email-protection#621207100705100b0c0d070c030e0710160322050f030b0e4c010d0f"><span class="__cf_email__" data-cfemail="c0b0a5b2a5a7b2a9aeafa5aea1aca5b2b4a180a7ada1a9aceea3afad">[email&#160;protected]</span></a>
                                 </div>
                             </div>
                             <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" target="_blank" style="text-decoration: none;">
@@ -1221,7 +1364,7 @@
         </footer>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Generate starfield
         const starsContainer = document.getElementById('stars');
         const starCount = 200;
@@ -1267,7 +1410,30 @@
                         block: 'start'
                     });
                 }
+                // Close mobile menu after clicking a link
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
             });
+        });
+
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                toggleMenu();
+            }
         });
 
         // Parallax effect on mouse move
