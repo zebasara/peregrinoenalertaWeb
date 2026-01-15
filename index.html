@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peregrino en Alerta | Instalación de Cámaras de Seguridad, Videovigilancia en Tandil y Monitoreo 24/7</title>
     <meta name="description" content="Peregrino en Alerta ofrece instalación profesional de cámaras de seguridad, videovigilancia y monitoreo 24/7 para hogares, comercios y empresas. Protección inteligente contra robos, intrusos y emergencias." />
-
     <meta name="keywords" content="instalación de cámaras de seguridad, cámaras de seguridad, videovigilancia, monitoreo 24/7, seguridad, protección, alarmas, cámaras IP, cámaras wifi, seguridad para hogares, seguridad para comercios, sistema de vigilancia, CCTV, monitoreo remoto, central de monitoreo, seguridad electrónica" />
-
     <meta name="robots" content="index, follow" />
-
     <link rel="canonical" href="https://peregrinoenalerta.vercel.app/" />
-   
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -20,26 +18,111 @@
         }
 
         :root {
-            --primary: #0a0f1e;
-            --secondary: #1a2332;
-            --accent: #3b82f6;
-            --accent-light: #60a5fa;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
+            --space-black: #0a0118;
+            --deep-purple: #1a0b2e;
+            --electric-blue: #00d9ff;
+            --neon-cyan: #0ff;
+            --plasma-pink: #ff00ff;
+            --star-white: #ffffff;
+            --nebula-violet: #7b2cbf;
+            --cosmic-orange: #ff6d00;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: var(--primary);
-            color: var(--text);
-            line-height: 1.6;
+            font-family: 'Space Mono', monospace;
+            background: var(--space-black);
+            color: var(--star-white);
             overflow-x: hidden;
+            position: relative;
+            cursor: crosshair;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        /* Animated Starfield Background */
+        .universe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Nebula Effect */
+        .nebula {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(123, 44, 191, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 217, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 0, 255, 0.15) 0%, transparent 50%);
+            filter: blur(60px);
+            animation: nebulaPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes nebulaPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.9; }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(90deg, #fff, transparent);
+            border-radius: 50%;
+            animation: shoot 3s ease-out infinite;
+        }
+
+        @keyframes shoot {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-300px) translateY(300px);
+                opacity: 0;
+            }
+        }
+
+        /* Orbital Rings */
+        .orbital-ring {
+            position: absolute;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 50%;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Content Container */
+        .content {
+            position: relative;
+            z-index: 1;
         }
 
         /* Header */
@@ -48,17 +131,29 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(10, 15, 30, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            background: rgba(10, 1, 24, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+            animation: headerSlideDown 1s ease-out;
+        }
+
+        @keyframes headerSlideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 2rem;
-            max-width: 1200px;
+            padding: 1.5rem 3rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -66,43 +161,106 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text);
-            letter-spacing: -0.5px;
+            font-weight: 900;
+            color: var(--star-white);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
         }
 
-        .logo-image {
+        .logo::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--electric-blue), var(--plasma-pink));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover::before {
+            transform: scaleX(1);
+        }
+
+        .logo-orb {
             width: 50px;
             height: 50px;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--electric-blue), var(--plasma-pink));
+            box-shadow: 
+                0 0 20px var(--electric-blue),
+                0 0 40px var(--plasma-pink),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: orbPulse 3s ease-in-out infinite;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            border: 2px solid var(--accent);
+            font-size: 1.5rem;
+        }
+
+        @keyframes orbPulse {
+            0%, 100% {
+                box-shadow: 
+                    0 0 20px var(--electric-blue),
+                    0 0 40px var(--plasma-pink),
+                    inset 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                box-shadow: 
+                    0 0 30px var(--electric-blue),
+                    0 0 60px var(--plasma-pink),
+                    inset 0 0 30px rgba(255, 255, 255, 0.5);
+            }
         }
 
         .logo span {
-            color: var(--accent);
+            background: linear-gradient(135deg, var(--electric-blue), var(--plasma-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-muted);
+            color: var(--star-white);
             text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--electric-blue), var(--neon-cyan));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-light);
+            color: var(--electric-blue);
+            text-shadow: 0 0 10px var(--electric-blue);
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
         }
 
         /* Hero Section */
@@ -110,252 +268,403 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
-            padding-top: 80px;
-            overflow: hidden;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
+            max-width: 1000px;
+            animation: heroFadeIn 2s ease-out;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text) 0%, var(--accent-light) 100%);
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--star-white) 0%, var(--electric-blue) 50%, var(--plasma-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 30px rgba(255, 0, 255, 0.8));
+            }
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            font-family: 'Space Mono', monospace;
+            text-shadow: 0 0 10px var(--neon-cyan);
+            animation: taglinePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes taglinePulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 1rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--electric-blue), var(--plasma-pink));
+            color: var(--star-white);
+            border: none;
+            box-shadow: 
+                0 0 20px rgba(0, 217, 255, 0.5),
+                0 0 40px rgba(255, 0, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 0 30px rgba(0, 217, 255, 0.8),
+                0 0 60px rgba(255, 0, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--electric-blue);
+            border: 2px solid var(--electric-blue);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 217, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
+        }
+
+        /* Holographic Divider */
+        .holo-divider {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--electric-blue), var(--plasma-pink), transparent);
+            margin: 4rem 0;
+            box-shadow: 0 0 10px var(--electric-blue);
+            animation: holoDividerFlow 3s linear infinite;
+        }
+
+        @keyframes holoDividerFlow {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(135deg, var(--electric-blue), var(--plasma-pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--text);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-light);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text);
-            border: 2px solid var(--accent);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(59, 130, 246, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Background Animation */
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .grid-line {
-            position: absolute;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-        }
-
-        .grid-line.horizontal {
-            width: 100%;
-            height: 1px;
-        }
-
-        .grid-line.vertical {
-            width: 1px;
-            height: 100%;
-        }
-
-        .floating-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 20s infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(100px, -100px); }
-            50% { transform: translate(-100px, -200px); }
-            75% { transform: translate(50px, -150px); }
-        }
-
-        /* Services Section */
-        .services {
-            padding: 8rem 0;
-            background: var(--secondary);
-        }
-
-        .section-title {
+        .section-subtitle {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 1.2rem;
+            color: var(--neon-cyan);
             margin-bottom: 4rem;
-            font-weight: 700;
+            text-shadow: 0 0 10px var(--neon-cyan);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .service-card {
-            background: var(--primary);
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid rgba(59, 130, 246, 0.1);
-            transition: all 0.3s;
+            background: rgba(26, 11, 46, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 217, 255, 0.3);
             position: relative;
             overflow: hidden;
+            transition: all 0.5s ease;
+            animation: cardFloat 6s ease-in-out infinite;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(0, 217, 255, 0.1) 50%,
+                transparent 70%
+            );
+            animation: cardShine 8s linear infinite;
         }
 
-        .service-card:hover::before {
-            opacity: 1;
+        @keyframes cardShine {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--electric-blue);
+            box-shadow: 
+                0 0 30px rgba(0, 217, 255, 0.5),
+                0 0 60px rgba(255, 0, 255, 0.3);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 12px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--electric-blue), var(--plasma-pink));
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            box-shadow: 
+                0 0 20px var(--electric-blue),
+                0 0 40px var(--plasma-pink);
+            animation: iconSpin 10s linear infinite;
+        }
+
+        @keyframes iconSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: var(--text);
+            color: var(--star-white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .service-card p {
-            color: var(--text-muted);
-            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
         .service-badge {
             display: inline-block;
-            background: rgba(59, 130, 246, 0.2);
-            color: var(--accent-light);
-            padding: 0.3rem 0.8rem;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(255, 0, 255, 0.2));
+            color: var(--neon-cyan);
+            padding: 0.5rem 1rem;
             border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 1rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         /* Technology Section */
         .technology {
-            padding: 8rem 0;
+            padding: 8rem 2rem;
+            background: rgba(26, 11, 46, 0.3);
+            position: relative;
         }
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
         }
 
         .tech-card {
-            background: var(--secondary);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            background: rgba(10, 1, 24, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 217, 255, 0.2);
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--plasma-pink));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .tech-card:hover::after {
+            transform: scaleX(1);
         }
 
         .tech-card:hover {
-            transform: scale(1.05);
-            border-color: var(--accent);
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 
+                0 0 30px rgba(0, 217, 255, 0.4),
+                0 0 60px rgba(255, 0, 255, 0.2);
         }
 
         .tech-logo {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: techLogoFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes techLogoFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .tech-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--electric-blue);
         }
 
         .tech-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
         }
 
         /* Features Section */
         .features {
-            padding: 8rem 0;
-            background: var(--secondary);
+            padding: 8rem 2rem;
+            position: relative;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
             align-items: center;
         }
 
@@ -367,47 +676,167 @@
 
         .feature-item {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
+            align-items: start;
+            background: rgba(26, 11, 46, 0.4);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: var(--electric-blue);
+            background: rgba(26, 11, 46, 0.6);
+            transform: translateX(10px);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
         }
 
         .feature-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--electric-blue), var(--plasma-pink));
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
         }
 
         .feature-item h4 {
+            font-family: 'Orbitron', sans-serif;
             margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .feature-item p {
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
         }
 
-        .feature-visual {
-            background: var(--primary);
-            border-radius: 16px;
-            padding: 3rem;
-            border: 1px solid rgba(59, 130, 246, 0.1);
+        /* Holographic Display */
+        .holo-display {
+            position: relative;
+            width: 100%;
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 400px;
+        }
+
+        .security-globe {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            animation: globeRotate 30s linear infinite;
+        }
+
+        @keyframes globeRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .globe-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(0, 217, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .globe-ring:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 20px var(--electric-blue);
+        }
+
+        .globe-ring:nth-child(2) {
+            width: 240px;
+            height: 240px;
+            animation: globeRotate 20s linear infinite reverse;
+        }
+
+        .globe-ring:nth-child(3) {
+            width: 180px;
+            height: 180px;
+            border-color: var(--plasma-pink);
+            box-shadow: 0 0 20px var(--plasma-pink);
+        }
+
+        .globe-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--electric-blue), var(--plasma-pink));
+            border-radius: 50%;
+            box-shadow: 
+                0 0 40px var(--electric-blue),
+                0 0 80px var(--plasma-pink),
+                inset 0 0 40px rgba(255, 255, 255, 0.3);
+            animation: corePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes corePulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 
+                    0 0 40px var(--electric-blue),
+                    0 0 80px var(--plasma-pink),
+                    inset 0 0 40px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                box-shadow: 
+                    0 0 60px var(--electric-blue),
+                    0 0 120px var(--plasma-pink),
+                    inset 0 0 60px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .security-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--neon-cyan);
+            border-radius: 50%;
+            animation: securityPulseAnim 2s ease-out infinite;
+        }
+
+        @keyframes securityPulseAnim {
+            0% {
+                width: 100px;
+                height: 100px;
+                opacity: 1;
+            }
+            100% {
+                width: 400px;
+                height: 400px;
+                opacity: 0;
+            }
         }
 
         /* Contact Section */
         .contact {
-            padding: 8rem 0;
+            padding: 8rem 2rem;
+            background: rgba(26, 11, 46, 0.4);
+            position: relative;
         }
 
         .contact-content {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
@@ -415,282 +844,441 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
             margin-top: 3rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--secondary);
-            border-radius: 12px;
-            border: 1px solid rgba(59, 130, 246, 0.1);
-            transition: all 0.3s;
+            gap: 2rem;
+            padding: 2rem;
+            background: rgba(10, 1, 24, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 217, 255, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--star-white);
         }
 
         .contact-item:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+            box-shadow: 
+                0 0 30px rgba(0, 217, 255, 0.4),
+                0 0 60px rgba(255, 0, 255, 0.2);
         }
 
-        .contact-item svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--accent);
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--electric-blue), var(--plasma-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .contact-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--star-white);
+        }
+
+        .contact-details {
+            text-align: left;
+            flex: 1;
+        }
+
+        .contact-details strong {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--electric-blue);
+        }
+
+        .contact-details a,
+        .contact-details span {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            color: var(--neon-cyan);
         }
 
         /* Footer */
         footer {
-            padding: 3rem 0;
+            padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid rgba(59, 130, 246, 0.1);
-            background: var(--secondary);
+            border-top: 2px solid rgba(0, 217, 255, 0.2);
+            background: rgba(10, 1, 24, 0.9);
         }
 
         footer p {
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Space Mono', monospace;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 1024px) {
             .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                display: none;
+                font-size: 3.5rem;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
+            .security-globe {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
             }
 
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
             .tech-grid {
                 grid-template-columns: 1fr;
             }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .security-globe {
+                width: 250px;
+                height: 250px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-details {
+                text-align: center;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="icono_empresa.png" alt="Logo" style="width:55px;height:135px;border-radius:10px;">
-                <div>Peregrino <span>en Alerta</span></div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#tecnologia">Tecnología</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Universe Background -->
+    <div class="universe">
+        <div class="nebula"></div>
+        <div class="stars" id="stars"></div>
+        <div class="shooting-star" style="top: 20%; left: 80%; animation-delay: 2s;"></div>
+        <div class="shooting-star" style="top: 40%; left: 60%; animation-delay: 5s;"></div>
+        <div class="shooting-star" style="top: 70%; left: 30%; animation-delay: 8s;"></div>
+        
+        <div class="orbital-ring" style="width: 400px; height: 400px; top: 20%; left: 10%;"></div>
+        <div class="orbital-ring" style="width: 300px; height: 300px; top: 60%; left: 70%; animation-duration: 40s;"></div>
+    </div>
 
-    <main>
-        <section class="hero">
-            <div class="hero-bg">
-                <div class="grid-line horizontal" style="top: 20%;"></div>
-                <div class="grid-line horizontal" style="top: 40%;"></div>
-                <div class="grid-line horizontal" style="top: 60%;"></div>
-                <div class="grid-line horizontal" style="top: 80%;"></div>
-                <div class="grid-line vertical" style="left: 20%;"></div>
-                <div class="grid-line vertical" style="left: 40%;"></div>
-                <div class="grid-line vertical" style="left: 60%;"></div>
-                <div class="grid-line vertical" style="left: 80%;"></div>
-                <div class="floating-particle" style="top: 20%; left: 30%; animation-delay: 0s;"></div>
-                <div class="floating-particle" style="top: 60%; left: 70%; animation-delay: 3s;"></div>
-                <div class="floating-particle" style="top: 40%; left: 50%; animation-delay: 6s;"></div>
-            </div>
-            <div class="container">
+    <!-- Content -->
+    <div class="content">
+        <header>
+            <nav>
+                <div class="logo">
+                    <div class="logo-orb">🛡️</div>
+                    <div>Peregrino <span>en Alerta</span></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#tecnologia">Tecnología</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
                 <div class="hero-content">
-                    <h1>Seguridad que nunca duerme</h1>
-                    <p>Protegemos tu hogar y negocio en Tandil con tecnología de monitoreo de alarmas y videovigilancia las 24 horas del día.</p>
+                    <div class="tagline">[ SISTEMA DE PROTECCIÓN AVANZADA ]</div>
+                    <h1>Seguridad<br>del Futuro</h1>
+                    <p>Tecnología de monitoreo inteligente que protege tu mundo las 24 horas. Videovigilancia de última generación y respuesta inmediata en Tandil.</p>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" class="btn btn-primary" target="_blank">Solicitar Cotización</a>
-                        <a href="#servicios" class="btn btn-secondary">Conocer Más</a>
+                        <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" class="btn btn-primary" target="_blank"><span>INICIAR MISIÓN</span></a>
+                        <a href="#servicios" class="btn btn-secondary"><span>EXPLORAR SISTEMAS</span></a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="servicios" class="services">
-            <div class="container">
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🛡️</div>
-                        <h3>Monitoreo de Alarmas</h3>
-                        <p>Sistema de respuesta inmediata ante cualquier activación de alarma. Personal capacitado supervisando tu seguridad las 24 horas.</p>
-                        <span class="service-badge">Todas las marcas</span>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📹</div>
-                        <h3>Videovigilancia</h3>
-                        <p>Cámaras de alta definición con acceso remoto. Monitoreo en tiempo real y grabación de eventos para tu tranquilidad.</p>
-                        <span class="service-badge">Dahua • Imou</span>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📱</div>
-                        <h3>Alertas Inteligentes</h3>
-                        <p>Notificaciones instantáneas en tu dispositivo móvil. Mantente informado de todo lo que sucede en tu propiedad.</p>
-                        <span class="service-badge">24/7 Conectado</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <div class="holo-divider"></div>
 
-        <section id="tecnologia" class="technology">
-            <div class="container">
-                <h2 class="section-title">Tecnología de Última Generación</h2>
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <div class="tech-logo">📷</div>
-                        <h4>Cámaras Dahua</h4>
-                        <p>Alta resolución 4K, visión nocturna, detección de movimiento inteligente y análisis de video avanzado</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-logo">🎥</div>
-                        <h4>Cámaras Imou</h4>
-                        <p>Tecnología IoT, control remoto vía app, audio bidireccional y almacenamiento en nube seguro</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-logo">🔔</div>
-                        <h4>Sistemas de Alarmas</h4>
-                        <p>Compatible con todas las marcas - DSC, Paradox, Ajax, Honeywell y más. Monitoreo profesional 24/7</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-logo">🌐</div>
-                        <h4>Central de Monitoreo</h4>
-                        <p>Plataforma unificada para vigilancia en tiempo real, respuesta inmediata y gestión integral de seguridad</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="nosotros" class="features">
-            <div class="container">
-                <div class="features-grid">
-                    <div class="feature-list">
-                        <div>
-                            <h2 class="section-title" style="text-align: left;">¿Por qué elegirnos?</h2>
+            <section id="servicios" class="services fade-in">
+                <div class="container">
+                    <h2 class="section-title">Sistemas de Defensa</h2>
+                    <div class="section-subtitle">// Protección Integral 24/7</div>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🛡️</div>
+                            <h3>Monitoreo Activo</h3>
+                            <p>Central de operaciones con vigilancia constante. Respuesta inmediata ante cualquier amenaza detectada por nuestro sistema de alarmas inteligente.</p>
+                            <span class="service-badge">Todas las marcas</span>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">⚡</div>
-                            <div>
-                                <h4>Respuesta Rápida</h4>
-                                <p>Tiempo de respuesta promedio de menos de 3 minutos ante cualquier emergencia.</p>
-                            </div>
+                        <div class="service-card">
+                            <div class="service-icon">📹</div>
+                            <h3>Videovigilancia HD</h3>
+                            <p>Cámaras de ultra alta definición con visión nocturna avanzada. Acceso remoto en tiempo real desde cualquier dispositivo conectado.</p>
+                            <span class="service-badge">Dahua • Imou</span>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🏆</div>
-                            <div>
-                                <h4>Experiencia Local</h4>
-                                <p>Años de experiencia protegiendo hogares y negocios en Tandil. Conocemos la ciudad.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🔧</div>
-                            <div>
-                                <h4>Tecnología Avanzada</h4>
-                                <p>Equipos de última generación para garantizar la máxima seguridad y confiabilidad.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">💼</div>
-                            <div>
-                                <h4>Atención Personalizada</h4>
-                                <p>Soluciones adaptadas a tus necesidades específicas con asesoramiento profesional.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feature-visual">
-                        <div style="text-align: center;">
-                            <svg width="300" height="300" viewBox="0 0 300 300">
-                                <defs>
-                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:rgb(59,130,246);stop-opacity:0.3" />
-                                        <stop offset="100%" style="stop-color:rgb(96,165,250);stop-opacity:0.1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="150" cy="150" r="120" fill="url(#grad1)" opacity="0.3">
-                                    <animate attributeName="r" from="100" to="130" dur="2s" repeatCount="indefinite" />
-                                    <animate attributeName="opacity" from="0.3" to="0.1" dur="2s" repeatCount="indefinite" />
-                                </circle>
-                                <circle cx="150" cy="150" r="90" fill="url(#grad1)" opacity="0.5">
-                                    <animate attributeName="r" from="80" to="100" dur="2s" repeatCount="indefinite" />
-                                </circle>
-                                <circle cx="150" cy="150" r="60" fill="rgb(59,130,246)" opacity="0.8" />
-                                <g id="clock-hands">
-                                    <line id="hour-hand" x1="150" y1="150" x2="150" y2="120" stroke="white" stroke-width="6" stroke-linecap="round">
-                                        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" dur="43200s" repeatCount="indefinite"/>
-                                    </line>
-                                    <line id="minute-hand" x1="150" y1="150" x2="150" y2="105" stroke="white" stroke-width="4" stroke-linecap="round">
-                                        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" dur="3600s" repeatCount="indefinite"/>
-                                    </line>
-                                    <line id="second-hand" x1="150" y1="150" x2="150" y2="95" stroke="rgb(96,165,250)" stroke-width="2" stroke-linecap="round">
-                                        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" dur="60s" repeatCount="indefinite"/>
-                                    </line>
-                                </g>
-                                <circle cx="150" cy="150" r="5" fill="white" />
-                            </svg>
-                            <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 1rem; max-width: 280px; margin-left: auto; margin-right: auto;">No es tarde para estar protegido. Comunicate con nosotros y recibí atención personalizada.</p>
+                        <div class="service-card">
+                            <div class="service-icon">📱</div>
+                            <h3>Alertas Cuánticas</h3>
+                            <p>Sistema de notificaciones instantáneas con inteligencia artificial. Mantén el control total de tu perímetro de seguridad.</p>
+                            <span class="service-badge">Conectividad Total</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="contacto" class="contact">
-            <div class="container">
-                <div class="contact-content">
-                    <h2 class="section-title">Hablemos de tu seguridad</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Estamos en Tandil para brindarte la mejor protección. Contáctanos y recibe una cotización personalizada.</p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            <div>
-                                <strong>Email</strong><br>
-                                <a href="mailto:peregrinoenalerta@gmail.com" style="color: var(--text-muted); text-decoration: none;">peregrinoenalerta@gmail.com</a>
-                            </div>
+            <div class="holo-divider"></div>
+
+            <section id="tecnologia" class="technology fade-in">
+                <div class="container">
+                    <h2 class="section-title">Arsenal Tecnológico</h2>
+                    <div class="section-subtitle">// Equipamiento de Élite</div>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <div class="tech-logo">📷</div>
+                            <h4>Dahua Tech</h4>
+                            <p>Resolución 4K Ultra HD, visión nocturna infrarroja, detección de movimiento con IA y análisis predictivo de comportamientos</p>
                         </div>
-                        <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" target="_blank" style="text-decoration: none;">
-                            <div class="contact-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        <div class="tech-card">
+                            <div class="tech-logo">🎥</div>
+                            <h4>Imou IoT</h4>
+                            <p>Tecnología IoT de vanguardia, audio bidireccional cristalino, almacenamiento en nube encriptado y control total vía app</p>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-logo">🔔</div>
+                            <h4>Multi-Sistemas</h4>
+                            <p>Integración universal con DSC, Paradox, Ajax, Honeywell y todas las marcas. Monitoreo profesional sin interrupciones</p>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-logo">🌐</div>
+                            <h4>Central Neural</h4>
+                            <p>Plataforma unificada de comando con vigilancia sincronizada, respuesta táctica inmediata y gestión integral de seguridad</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="holo-divider"></div>
+
+            <section id="nosotros" class="features fade-in">
+                <div class="container">
+                    <div class="features-grid">
+                        <div class="feature-list">
+                            <div>
+                                <h2 class="section-title" style="text-align: left;">Superioridad Operativa</h2>
+                                <div class="section-subtitle" style="text-align: left;">// Por qué somos diferentes</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">⚡</div>
                                 <div>
-                                    <strong>WhatsApp</strong><br>
-                                    <span style="color: var(--text-muted);">+54 9 249 420-7140</span>
+                                    <h4>Reacción Instantánea</h4>
+                                    <p>Tiempo de respuesta ultrarrápido inferior a 3 minutos. Protocolo de emergencia con tecnología de punta.</p>
                                 </div>
                             </div>
-                        </a>
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            <div>
-                                <strong>Ubicación</strong><br>
-                                <span style="color: var(--text-muted);">Tandil, Buenos Aires</span>
+                            <div class="feature-item">
+                                <div class="feature-icon">🏆</div>
+                                <div>
+                                    <h4>Experiencia Táctica</h4>
+                                    <p>Años de operaciones exitosas protegiendo Tandil. Conocimiento profundo del terreno y la comunidad.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🔧</div>
+                                <div>
+                                    <h4>Tech de Élite</h4>
+                                    <p>Equipamiento de última generación certificado. Máxima fiabilidad y rendimiento garantizado.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">💼</div>
+                                <div>
+                                    <h4>Soluciones Custom</h4>
+                                    <p>Sistemas diseñados a medida para cada misión. Asesoramiento especializado y soporte continuo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="holo-display">
+                            <div class="security-globe">
+                                <div class="globe-ring"></div>
+                                <div class="globe-ring"></div>
+                                <div class="globe-ring"></div>
+                                <div class="globe-core"></div>
+                                <div class="security-pulse"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Peregrino en Alerta. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+            <div class="holo-divider"></div>
+
+            <section id="contacto" class="contact fade-in">
+                <div class="container">
+                    <div class="contact-content">
+                        <h2 class="section-title">Comando Central</h2>
+                        <div class="section-subtitle">// Establece conexión</div>
+                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">Base de operaciones en Tandil lista para recibir tu señal. Cotización personalizada sin compromiso.</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                </div>
+                                <div class="contact-details">
+                                    <strong>Canal Email</strong>
+                                    <a href="mailto:peregrinoenalerta@gmail.com">peregrinoenalerta@gmail.com</a>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" target="_blank" style="text-decoration: none;">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                                    </div>
+                                    <div class="contact-details">
+                                        <strong>WhatsApp Directo</strong>
+                                        <span>+54 9 249 420-7140</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                </div>
+                                <div class="contact-details">
+                                    <strong>Coordenadas Base</strong>
+                                    <span>Tandil, Buenos Aires, Argentina</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 Peregrino en Alerta // Sistema de Protección Avanzada // Todos los derechos reservados</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Generate starfield
+        const starsContainer = document.getElementById('stars');
+        const starCount = 200;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            document.querySelectorAll('.orbital-ring').forEach((ring, index) => {
+                ring.style.transform = `translate(${moveX * (index + 1)}px, ${moveY * (index + 1)}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
