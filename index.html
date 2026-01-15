@@ -8,7 +8,7 @@
     <meta name="keywords" content="instalación de cámaras de seguridad, cámaras de seguridad, videovigilancia, monitoreo 24/7, seguridad, protección, alarmas, cámaras IP, cámaras wifi, seguridad para hogares, seguridad para comercios, sistema de vigilancia, CCTV, monitoreo remoto, central de monitoreo, seguridad electrónica" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://peregrinoenalerta.vercel.app/" />
-    <link rel="icon" type="image/png" href="icono_empresa.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -201,6 +201,17 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes orbPulse {
@@ -1083,6 +1094,11 @@
                 font-size: 1.2rem;
             }
 
+            .logo-image {
+                width: 100%;
+                height: 100%;
+            }
+
             .service-card,
             .tech-card,
             .feature-item {
@@ -1161,7 +1177,9 @@
         <header>
             <nav>
                 <div class="logo">
-                    <div class="logo-orb">🛡️</div>
+                    <div class="logo-orb">
+                        <img src="peregrino_icono.png" alt="Peregrino en Alerta Logo" class="logo-image">
+                    </div>
                     <div>Peregrino <span>en Alerta</span></div>
                 </div>
                 <ul class="nav-links">
@@ -1195,7 +1213,7 @@
                     <h1>Seguridad<br>del Futuro</h1>
                     <p>Tecnología de monitoreo inteligente que protege tu mundo las 24 horas. Videovigilancia de última generación y respuesta inmediata en Tandil.</p>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" class="btn btn-primary" target="_blank"><span>INICIAR</span></a>
+                        <a href="https://wa.me/5492494207140?text=¡Hola!%20👋%20Estoy%20interesado/a%20en%20sus%20servicios%20de%20seguridad.%20¿Podrían%20contarme%20más%20sobre%20sus%20soluciones%20de%20monitoreo%20y%20videovigilancia?%20🔒" class="btn btn-primary" target="_blank"><span>INICIAR MISIÓN</span></a>
                         <a href="#servicios" class="btn btn-secondary"><span>EXPLORAR SISTEMAS</span></a>
                     </div>
                 </div>
