@@ -18,6 +18,11 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         :root {
             --space-black: #0a0118;
             --deep-purple: #1a0b2e;
@@ -34,8 +39,10 @@
             background: var(--space-black);
             color: var(--star-white);
             overflow-x: hidden;
+            width: 100%;
             position: relative;
             cursor: crosshair;
+            max-width: 100vw;
         }
 
         /* Animated Starfield Background */
@@ -48,6 +55,7 @@
             z-index: 0;
             background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
             overflow: hidden;
+            max-width: 100vw;
         }
 
         .stars {
@@ -124,18 +132,25 @@
         .content {
             position: relative;
             z-index: 1;
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
         }
 
         /* Header */
         header {
             position: fixed;
             top: 0;
-            width: 100%;
+            left: 0;
+            right: 0;
             z-index: 1000;
             background: rgba(10, 1, 24, 0.8);
             backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid rgba(0, 217, 255, 0.3);
             animation: headerSlideDown 1s ease-out;
+            animation-fill-mode: forwards;
+            max-width: 100vw;
+            overflow: hidden;
         }
 
         @keyframes headerSlideDown {
@@ -155,7 +170,9 @@
             align-items: center;
             padding: 1.5rem 3rem;
             max-width: 1400px;
+            width: 100%;
             margin: 0 auto;
+            box-sizing: border-box;
         }
 
         .logo {
@@ -1492,7 +1509,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <strong>Canal Email</strong>
-                                    <a href="mailto:peregrinoenalerta@gmail.com">peregrinoenalerta@gmail.com</a>
+                                    <a href="/cdn-cgi/l/email-protection#ef9f8a9d8a889d8681808a818e838a9d9b8eaf88828e8683c18c8082"><span class="__cf_email__" data-cfemail="e59580978082978c8b8a808b848980979184a58288848c89cb868a88">[email&#160;protected]</span></a>
                                 </div>
                             </div>
                             <a href="https://wa.me/5492494207140?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20seguridad" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
@@ -1528,7 +1545,7 @@
         </footer>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Generate starfield
         const starsContainer = document.getElementById('stars');
         const starCount = 200;
