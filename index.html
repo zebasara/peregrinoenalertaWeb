@@ -8,7 +8,7 @@
     <meta name="keywords" content="instalación de cámaras de seguridad, cámaras de seguridad, videovigilancia, monitoreo 24/7, seguridad, protección, alarmas, cámaras IP, cámaras wifi, seguridad para hogares, seguridad para comercios, sistema de vigilancia, CCTV, monitoreo remoto, central de monitoreo, seguridad electrónica" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://peregrinoenalerta.vercel.app/" />
-    <link rel="icon" type="image/png" href="icono_empresa.png" />
+    <link rel="icon" type="image/png" href="peregrino_icono.png" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -755,13 +755,18 @@
             height: 100%;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 1, 24, 0.8);
         }
 
         .gallery-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
+            padding: 10px;
         }
 
         .gallery-controls {
@@ -1362,13 +1367,13 @@
                             <div class="gallery-container" data-gallery="dahua">
                                 <div class="gallery-slider">
                                     <div class="gallery-slide">
-                                        <img src="dahua-1.jpg" alt="Cámara Dahua 1" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/00d9ff?text=Dahua+Camera+1'">
+                                        <img src="cruiser_dahua.png" alt="Cámara Dahua 1" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/00d9ff?text=Dahua+Camera+1'">
                                     </div>
                                     <div class="gallery-slide">
-                                        <img src="dahua-2.jpg" alt="Cámara Dahua 2" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/ff00ff?text=Dahua+Camera+2'">
+                                        <img src="domo_dahua.png" alt="Cámara Dahua 2" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/ff00ff?text=Dahua+Camera+2'">
                                     </div>
                                     <div class="gallery-slide">
-                                        <img src="dahua-3.jpg" alt="Cámara Dahua 3" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/00d9ff?text=Dahua+Camera+3'">
+                                        <img src="fija_dahua.png" alt="Cámara Dahua 3" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/00d9ff?text=Dahua+Camera+3'">
                                     </div>
                                 </div>
                                 <div class="gallery-nav prev" onclick="changeSlide('dahua', -1)">‹</div>
@@ -1387,13 +1392,13 @@
                             <div class="gallery-container" data-gallery="imou">
                                 <div class="gallery-slider">
                                     <div class="gallery-slide">
-                                        <img src="imou-1.jpg" alt="Cámara Imou 1" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/ff00ff?text=Imou+Camera+1'">
+                                        <img src="imou-bullet-2c.png" alt="Cámara Imou 1" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/ff00ff?text=Imou+Camera+1'">
                                     </div>
                                     <div class="gallery-slide">
-                                        <img src="imou-2.jpg" alt="Cámara Imou 2" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/00d9ff?text=Imou+Camera+2'">
+                                        <img src="imou-cruiser-2.png" alt="Cámara Imou 2" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/00d9ff?text=Imou+Camera+2'">
                                     </div>
                                     <div class="gallery-slide">
-                                        <img src="imou-3.jpg" alt="Cámara Imou 3" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/ff00ff?text=Imou+Camera+3'">
+                                        <img src="imou-cue-2.png" alt="Cámara Imou 3" onerror="this.src='https://via.placeholder.com/400x250/1a0b2e/ff00ff?text=Imou+Camera+3'">
                                     </div>
                                 </div>
                                 <div class="gallery-nav prev" onclick="changeSlide('imou', -1)">‹</div>
@@ -1487,7 +1492,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <strong>Canal Email</strong>
-                                    <a href="/cdn-cgi/l/email-protection#d9a9bcabbcbeabb0b7b6bcb7b8b5bcabadb899beb4b8b0b5f7bab6b4"><span class="__cf_email__" data-cfemail="e59580978082978c8b8a808b848980979184a58288848c89cb868a88">[email&#160;protected]</span></a>
+                                    <a href="mailto:peregrinoenalerta@gmail.com">peregrinoenalerta@gmail.com</a>
                                 </div>
                             </div>
                             <a href="https://wa.me/5492494207140?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20seguridad" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
@@ -1523,7 +1528,7 @@
         </footer>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Generate starfield
         const starsContainer = document.getElementById('stars');
         const starCount = 200;
